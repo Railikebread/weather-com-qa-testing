@@ -1,0 +1,248 @@
+Test Case ID,Feature/Module,Test Case Title,Description,Preconditions,Test Steps,Expected Result,Actual Result,Status,Severity,Priority,Test Type,Tested By,Date Tested,Comments/Notes
+TC001,Homepage,Verify homepage loads successfully,Ensure the website loads quickly and displays key UI elements on entry.,"""User opens browser"" → Consider specifying browser version or device type if relevant.",1. Navigate to https://weather.com,Homepage loads fully within 3 seconds with no errors; page title and main banner are displayed,"The homepage loads completely without errors, showing current weather and top-level menu",Pass,Critical ,High,Manual,Rahanul Patwary,5/17/2025,Executed on Chrome on Windows/Mac. No issues observed during homepage load.
+TC002,Homepage,Check that all main sections are visible,Confirm that all key content areas are present and visually intact.,Homepage is loaded,"1. Confirm visibility of search bar, current weather, 10-day forecast, radar maps, and video section
+2. Scroll down if necessary","All listed sections are visible, properly aligned, and fully functional","All homepage sections are displayed correctly. Layout is fully aligned, elements are responsive, and all links/buttons within the sections are functional.",Pass,Major,Medium,Manual,Rahanul Patwary,5/17/2025,Tested on desktop Chrome browser. No visual or functional issues identified on any homepage section.
+TC003,Homepage,Verify that homepage responds to screen resizing,Validate the layout adapts on different screen sizes (mobile/tablet).,Homepage is loaded,"1. Resize browser to 375x667 (mobile) and 768x1024 (tablet)
+2. Observe layout and content display",Layout adapts smoothly without horizontal scrollbars or overlapping content,"Layout adjusted responsively for both mobile (375x667) and tablet (768x1024) resolutions. No horizontal scrollbars appeared, and all content remained visible without overlap or distortion.",Pass,Minor,Medium,Manual,Rahanul Patwary,5/17/2025,None at this time. Responsive design appears to be implemented correctly.
+TC004,Homepage,Check if weather updates on location,Check that user location affects the default weather shown.,Location services enabled in browser and device        ,"1. Open homepage
+2. Allow location permission when prompted",Weather displayed matches user’s current location within 1 minute,Weather displayed accurately reflects the user’s current location within 1 minute of granting permission.,Pass,Major,High,Manual,Rahanul Patwary,5/17/2025,None
+TC005,Homepage,Verify homepage banner links to correct pages,Test all homepage promotional banners to ensure they redirect correctly.,Homepage is loaded,"1. Click each top homepage banner (e.g., news, radar, alerts)
+2. Verify the redirected page URL",Each banner redirects to the correct page; page loads successfully and content is relevant,All homepage banners redirected correctly; the target pages loaded successfully with relevant content.,Pass,Major,Medium,Manual,Rahanul Patwary,5/17/2025,None
+TC006,Search Functionality,Verify city weather search returns accurate results,Test search bar to ensure it retrieves accurate weather data.,Homepage is loaded,"1. Enter “New York” in search bar
+2. Press Enter",Page loads weather details for New York; city name displayed matches search exactly,Page loads weather details for New York; city name displayed matches search exactly.,Pass,Critical ,High,Manual,Rahanul Patwary,5/17/2025,None
+TC007,Search Functionality,Verify autocomplete in search bar,Ensure predictive search helps users quickly find cities.,Homepage is loaded,"1. Type “San” in search bar
+2. Wait up to 3 seconds for dropdown",Autocomplete dropdown with cities starting with “San” appears.,Autocomplete dropdown with cities starting with “San” appears.,Pass,Major,Medium,Manual,Rahanul Patwary,5/17/2025,None
+TC008,Search Functionality,Check non-existent city handling,Ensure system gracefully handles nonsensical or invalid city names.,Homepage is loaded,"1. Enter “xxyyzz” (non-existent city) in search bar
+2. Press Enter",Display message “Location not found” or appropriate error shown; no invalid data displayed,"Displays ""No results found"" perfectly.",Pass,Minor,Medium,Manual,Rahanul Patwary,5/17/2025,"Displays ""No results found"" perfectly."
+TC009,Search Functionality,Verify recent searches are listed,Check if recent city searches are stored and accessible via search bar.,Previously searched cities,1. Click in the search bar,Dropdown displays up to 5 recent searches; each search is clickable,Dropdown displays up to 5 recent searches; each search is clickable.,Pass,Minor,Low,Manual,Rahanul Patwary,5/17/2025,None
+TC010,Search Functionality,Test search with location turned off,Confirm that search works even without location permissions.,Location disabled,"1. Disable location permissions
+2. Search for “Chicago”",Search returns accurate weather data for Chicago manually; no location-based auto suggestions,Search function operates correctly without location permissions enabled.,Pass,Major,High,Manual,Rahanul Patwary,5/17/2025,None
+TC011,Current Weather,Verify current temperature display accuracy,Ensure the current temperature displayed is accurate and matches trusted weather sources.,User is on city weather page,"1. Navigate to a city’s weather page (e.g., New York)
+2. Compare displayed temperature to a trusted source",Current temperature matches trusted source within ±2°F/°C,Current temperature displayed matches trusted weather sources within ±2°F/°C consistently during multiple checks.,Pass,Major,High,Manual,Rahanul Patwary,5/17/2025,I used www.weatherbug.com and forecast.weather.gov for reference and comparisons
+TC012,Current Weather,Verify weather icon corresponds to conditions,Confirm the displayed weather icon aligns with current weather conditions.,User is on city weather page,1. View current weather icon,"Weather icon matches the described weather condition (e.g., sun for clear, cloud for cloudy)","Weather icons displayed correctly reflect the current weather conditions (e.g., sun icon for clear skies, cloud icon for cloudy).        ",Pass,Major,Medium,Manual,Rahanul Patwary,5/17/2025,None
+TC013,Forecast,Verify 10-day forecast displays correct dates,Validate that each day in the forecast corresponds to a real upcoming calendar date.,User is on city weather page,"1. Scroll to 10-day forecast section
+2. Check dates for next 10 days",Dates display consecutively and correspond to the upcoming 10 calendar days,10-day forecast displays accurate and up-to-date weather information.,Pass,Major,High,Manual,Rahanul Patwary,5/17/2025,None
+TC014,Forecast,Verify daily forecast details (high/low temps),Ensure each forecasted day displays both high and low expected temperatures.,User is on city weather page,1. Check high and low temperatures for each day in 10-day forecast,High and low temperatures are displayed and within expected ranges,Each forecasted day shows both high and low temperatures clearly; values are within expected realistic ranges.	,Pass,Major,High,Manual,Rahanul Patwary,5/17/2025,None
+TC015,Forecast,Verify weather alerts display correctly,Confirm alerts appear when applicable and are dismissible and readable.,Weather alerts exist for location,1. Navigate to alerts section,Weather alerts appear with relevant info; dismiss and reopen alert works,"No visible weather alerts button or section was found on the Weather Channel homepage when accessed via desktop using the latest version of Chrome, preventing the ability to view or interact with weather alerts.",Fail,Critical ,High,Manual,Rahanul Patwary,5/18/2025,Alert feature appears to be missing or not accessible on desktop Chrome; requires review and possible UI update.
+TC016,Radar Map,Verify radar map loads and displays properly,Ensure radar map initializes without errors and displays live precipitation data.,User is on city weather page,"1. Open the homepage.
+
+2. Click the hamburger menu icon at the top right corner.
+
+3. In the expanded menu, locate the “Radar & Maps” section (note: this heading is not clickable).
+
+4. Click on “Interactive Radar Map” under the “Radar & Maps” section.
+
+5. Verify that the radar map loads successfully, displays current precipitation data, and supports zooming and panning without errors.","The “Interactive Radar Map” loads promptly after selection, displaying live and accurate precipitation data. Zoom and pan controls function smoothly with no errors or glitches. The “Radar & Maps” heading itself is not clickable, but all submenu items under it are fully functional.","The radar map initialized without errors. All interactive functions, including scrolling, zooming in/out, and switching between available map layers (e.g., satellite, precipitation), worked smoothly and responsively. The interface was quick to respond and displayed live weather data accurately.",Pass,Major,Medium,Manual,Rahanul Patwary,5/18/2025,
+TC017,Radar Map,Verify radar animation playback works,Check that animation feature plays a time-lapse of radar data smoothly.,Radar map is loaded,1. Click play button on radar animation,Radar animates over time showing precipitation movement,"The radar animation playback works smoothly. The play button responds correctly, and the precipitation overlay (e.g., green for rain) displays accurately during animation at various zoom levels and regions. No graphical glitches were observed, even when zooming into international areas like Bangladesh.",Pass,Major,Medium,Manual,Rahanul Patwary,5/18/2025,"⚠️ Note: During initial testing, radar overlay failed to fully render when zoomed into the Bangladesh region during animation playback. Issue did not persist on retest. No reproducible steps found. May indicate an intermittent rendering glitch."
+TC018,Video Section,Verify featured weather video plays correctly,Confirm that the featured weather video loads and plays correctly with audio.,User is on homepage,"1. Locate featured weather video
+2. Click play","Video plays without errors, with audio (if applicable), and controls function","Clicking on the featured weather video redirects to a dedicated video page, where the user must click the play button again. The video loads and plays correctly with both video and audio functioning as expected. All controls—including fullscreen, playback bar, and volume—are responsive. The ""More Videos"" (9-square grid) button functions properly, displaying additional video options. Scrolling behavior on the video page is smooth in both directions.",Pass,Minor,Low,Manual,Rahanul Patwary,5/18/2025,"Navigation to a separate page before playback may be a design decision, but all core video features operate without issue."
+TC019,Video Section,Verify video controls (play/pause/mute),"Ensure user can pause, mute, and resume the weather video.",Video is playing,1. Use play/pause and mute/unmute buttons,"Controls work as expected, video pauses and resumes, audio toggles","The video controls function as expected. Play, pause, and mute buttons respond instantly with no noticeable delay. Audio mutes and resumes properly, and video playback resumes smoothly after pausing.",Pass,Minor,Low,Manual,,,
+TC020,User Account,Verify user can create a new account,Validate that new users can successfully register and log in.,User is on signup page,"1. Navigate to signup
+2. Enter valid info
+3. Submit",Account is created; user receives confirmation and is logged in,"The ""Sign Up"" button is prominently visible on the top-right of the homepage. Hovering over it reveals a helpful tooltip with account benefits (e.g., saving favorite locations and forecasts), along with options to sign in or try the premium version.
+Clicking ""Create Account"" redirects to a registration page offering both manual entry of required fields and a ""Sign Up with Google"" option.
+The Google sign-up flow worked as expected—after authorizing access, the account was created and logged in successfully. The user's profile icon appeared in place of the original ""Sign Up"" button, confirming account creation and login completion.",Pass,Critical ,High,Manual,,,Google sign-up flow was seamless with no delays. Tooltip on hover provides helpful guidance and improves usability. The overall design of the account creation process is user-friendly and visually clean.
+TC021,User Account,Verify login with valid credentials,Ensure users can log in successfully using correct email and password.,User has a registered account,"1. Navigate to login
+2. Enter valid email/password
+3. Click login",User is successfully logged in and redirected to homepage or dashboard,"User was able to successfully log out and reinitiate login using valid credentials. Since the account was created via Google, the login interface displayed the Google account option above the manual login fields.
+Clicking the Google option triggered the expected authentication flow, and after confirming the two screens, the user was logged in and redirected to the homepage with the profile icon visible, confirming a successful login.",Pass,Major,High,Manual,,,"Google login option appeared contextually and worked without issue. The login process was fast, intuitive, and redirected properly after authentication."
+TC022,User Account,Verify login with invalid credentials,Confirm that invalid login attempts display error messages and don’t log in.,User has no matching credentials,"1. Enter wrong credentials
+2. Click login","Error message displayed, login blocked","After logging out, an invalid login attempt was made using random email and password inputs. Upon submission, the system displayed the expected error message in red:
+""The email or password entered is invalid. Please try again.""
+No login occurred, and the user remained on the login page, confirming proper validation behavior.",Pass,Major,High,Manual,,,Error message was clearly visible and contextually placed above the email field. The system effectively prevented access with invalid credentials.
+TC023,User Account,Verify password reset,Ensure users can request and receive password reset links.,User is on login page,"1. Click ""Forgot Password""
+2. Enter email
+3. Submit",Password reset email is sent and confirmation message shown,"User accessed the password reset flow via a Google-created account. Clicking the profile icon opened a dropdown containing a “Manage Account” link, which directed to the account management page.
+From there, the “Change Password” option was clearly visible. Hovering over the information icon next to the password field displayed a helpful tooltip explaining that users who signed up via Google should use the “Forgot Password” option.
+Selecting “Forgot Password” redirected to the appropriate form where the user entered their email. A password reset email was received immediately, and the reset process completed successfully.",Pass,Major,High,Manual,,,"The experience was well-guided and user-friendly, especially with the contextual tooltip for Google-linked accounts. All steps worked without issue, and email delivery was instant."
+TC024,Search,Verify city search returns results,Test that entering a city in the search bar shows relevant weather results.,Homepage is loaded,"1. Click on search bar
+2. Enter valid city name
+3. Hit enter",Search returns weather data for entered city,"Entering a city name in the search bar correctly displayed a list of relevant weather results. Selecting the desired city loaded the corresponding weather details page without any issues.
+
+",Pass,Major,High,Manual,,,"Search was responsive, accurate, and provided autocomplete suggestions. No delays or misdirected results were observed.
+
+"
+TC025,Search,Verify no results for invalid city,Ensure searching for an invalid city displays appropriate feedback.,Homepage is loaded,"1. Enter gibberish in search
+2. Press enter","User sees ""No results found"" or similar message","Entering an invalid or nonsensical city name in the search bar correctly resulted in a “No results found” message within the dropdown. No page navigation or errors occurred.
+
+",Pass,Minor,Medium,Manual,,,"Behavior aligns with standard UX expectations. Clear feedback was provided directly in the search interface without disrupting the user experience.
+
+"
+TC026,Ads / Banners,Verify ad placement and loading	,Confirm ads load correctly in designated spots without breaking layout.,Page is fully loaded,"1. Observe page layout
+2. Scroll to banner/ad sections",Ads load in proper locations and don’t impact UI functionality,"Ads consistently load in their designated areas after the main page content. The layout remains intact, though there's a slight visual shift as the top ad finishes loading shortly after the rest of the page. This delay is brief and does not impact functionality.
+
+",Pass,Minor,Low,Manual,,,"Test performed on desktop using the latest version of Chrome. Minor visual drop observed when top ad loads post-initial render—common in ad-supported layouts and not considered a failure unless it disrupts usability.
+
+"
+TC027,Ads / Banners,Verify ad click redirects,Test that clicking an ad opens the ad destination in a new tab.,Ads are visible,1. Click on an ad banner,Ad link opens in a new browser tab/window,"Clicking on various ads successfully opened their respective destinations in new browser tabs. Each ad matched the content preview and loaded as described, with no errors or misdirects.",Pass,Minor,Low,Manual,,,"Test conducted on desktop using the latest version of Chrome. Ads opened as expected without affecting the original site session or tab behavior.
+
+"
+TC028,Page Performance,Verify homepage load time,Validate that homepage loads under 5 seconds under normal network conditions.,Network connection is stable,"1. Open homepage
+2. Measure load time",Homepage loads fully within performance benchmark,"The homepage consistently loaded in under 5 seconds under normal network conditions. All main content and UI elements became interactive quickly with no signs of lag or rendering issues.
+
+",Pass,Major,Medium,Manual,,,"Tested on desktop using the latest version of Chrome with a stable internet connection. Site performance remained smooth across multiple reloads.
+
+"
+TC029,Responsiveness,Verify site on mobile resolution,Check that Weather.com displays and functions properly on mobile screen sizes.,Open site in mobile view or device,"1. Open website in mobile
+2. Check layout, features, nav",Mobile layout adjusts properly and features are usable,"Accessed Weather.com on a personal Android device. The site adapted well to the mobile screen size with responsive layout, smooth navigation, and full functionality. All sections and features tested were fully accessible and displayed without any formatting issues.
+
+",Pass,Major,High,Manual,,,"Test performed on Android mobile browser (latest Chrome version). No visual or functional discrepancies were observed.
+
+"
+TC030,Responsiveness,Verify navigation menu on mobile,Ensure that hamburger menu is functional and displays correct links on mobile.,Website opened in mobile resolution,"1. Tap hamburger menu
+2. Check available links",Menu opens properly and includes all expected navigation items,"Tested on an Android device using Chrome. The hamburger menu opened smoothly when tapped, displaying a full-screen navigation overlay with multiple expandable menu sections. The “X” button at the top correctly closed the menu. All links and categories within the menu were clearly labeled and responsive.
+
+",Pass,Major,High,Manual,,,"Test conducted on mobile Chrome browser. Navigation behavior met all expectations; no layout or interaction issues encountered.
+
+"
+TC031,Alerts,Verify severe weather alert visibility,Ensure severe weather alerts are displayed prominently on relevant pages.,Severe weather alert is active,"1. Go to affected region
+2. Look for alert banner or section",Alert message is clearly visible and clickable for more info,,Blocked,Critical ,High,Manual,,,
+TC032,Alerts,Verify alert link redirection,Test that clicking on an alert takes the user to detailed information.,Alert is visible,1. Click alert banner or message,User is redirected to detailed alert page,,Blocked,Major,High,Manual,,,
+TC033,Accessibility,Verify image alt text,Ensure all images include alt tags for screen readers.,Developer tools or screen reader ready,1. Inspect element or use screen reader,All images contain appropriate and descriptive alt text,,,Minor,Medium,Manual,,,
+TC034,Accessibility,Verify keyboard navigation,Test full site navigation via keyboard only (Tab/Enter/Arrow keys).,Browser with keyboard access only,"1. Press Tab and navigate
+2. Try entering links and forms",All key areas are accessible and usable without a mouse,"Keyboard navigation using the Tab key moves focus forward through interactive elements as expected; however, backward navigation via Shift+Tab was not observed during testing. The Enter key successfully activates the selected element. Up and Down arrow keys scroll the page vertically, while Left and Right arrow keys had no effect, likely due to sufficient content fitting on the screen without horizontal scroll.
+
+",Pass,Major,Medium,Manual,,,"Test conducted on desktop using the latest Chrome version. While forward keyboard navigation and activation works well, lack of backward tabbing and non-functionality of left/right arrow keys may impact full keyboard accessibility. Further accessibility review recommended.
+
+"
+TC035,Video Player,Verify weather video playback,Confirm that the video player loads and plays videos smoothly.,Homepage loaded with video block,1. Click play on embedded video,Video begins playback with sound and clear picture,,,Major,Medium,Manual,,,
+TC036,Video Player,Verify video fullscreen mode,Ensure video player can enter and exit fullscreen without UI issues.,Video is playing,"1. Click fullscreen icon
+2. Observe behavior",Video enters fullscreen and exits on user command without bugs,,,Minor,Medium,Manual,,,
+TC037,Localization,Verify temperature units switch,Check that users can switch between Celsius and Fahrenheit and values update accordingly.,Homepage or forecast page open,"1. Locate temp unit switch
+2. Click to toggle units",Temperatures update to reflect new units (°F ⇄ °C),,,Major,High,Manual,,,
+TC038,Localization,Verify regional content,Confirm that site content changes to match user’s regional settings.,Change browser region or VPN location,"1. Set region to different country
+2. Open homepage","Page updates content (e.g., language, alerts) according to region",,,Major,Medium,Manual,,,
+TC039,Contact/Support,Verify contact link functionality,"Test that the ""Contact Us"" link redirects users to the appropriate page/form.",Homepage loaded,"1. Scroll to footer
+2. Click on ""Contact Us""",Contact page or support form opens,,,Minor,Low,Manual,,,
+TC040,Contact/Support,Verify feedback form submission,Ensure feedback form can be filled and submitted with confirmation message.,Feedback form is accessible,"1. Open form
+2. Fill in fields
+3. Click Submit",Confirmation message displayed; feedback is accepted,,,Major,Medium,Manual,,,
+TC041,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,Empty,,,,,,
