@@ -20,6 +20,7 @@ It validates the search and navigation features on [weather.com](https://www.wea
 
 ## 📂 Project Structure
 
+```text
 src
 └── test
     └── java
@@ -27,6 +28,7 @@ src
         └── com.qa.pages     # Page Object classes (WeatherHomePage, HamburgerMenuPage, etc.)
         └── com.qa.tests     # Test classes (searchWeatherByCityTest, etc.)
         └── utils            # ElementUtil helper class (smart waits, reusable actions)
+
 
 
 ---
