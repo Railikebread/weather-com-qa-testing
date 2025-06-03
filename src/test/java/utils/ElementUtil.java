@@ -39,7 +39,7 @@ public class ElementUtil {
 	
     // Clicks on an element after waiting for it to be visible
 	public void doClick(By locator) {
-		waitForElementVisible(locator, 10).clear();
+		waitForElementVisible(locator, 10).click();
 	// Short and safe. You don’t want flaky clicks due to invisible elements — this waits first.	
 	} 
 	
@@ -62,4 +62,9 @@ public class ElementUtil {
 		return waitForElementVisible(locator, 10).isDisplayed();
 	}
 	// Great for Validation checks.
+	
+	public WebElement waitForElementClickable(By locator, int timeoutSeconds) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
+		return wait.until(ExpectedConditions.elementToBeClickable(locator));
+	}
 }
