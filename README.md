@@ -21,16 +21,13 @@ It validates the search and navigation features on [weather.com](https://www.wea
 ## 📂 Project Structure
 
 src
-├── test
-│ └── java
-│ └── com.qa.base # BaseTest class (setup + teardown)
-│ └── com.qa.pages # Page Object classes
-│ └── com.qa.tests # Test classes
-│ └── utils # ElementUtil helper (smart waits, reusable actions)
+└── test
+    └── java
+        └── com.qa.base      # BaseTest class (setup + teardown)
+        └── com.qa.pages     # Page Object classes (WeatherHomePage, HamburgerMenuPage, etc.)
+        └── com.qa.tests     # Test classes (searchWeatherByCityTest, etc.)
+        └── utils            # ElementUtil helper class (smart waits, reusable actions)
 
-yaml
-Copy
-Edit
 
 ---
 
