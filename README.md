@@ -43,25 +43,6 @@ src
 
 ---
 
-## 🧪 Test Scenarios Implemented
-
-| Test Name                      | Description |
-|-------------------------------|-------------|
-| `searchWeatherByCityTest()`   | Verifies user can search for a city and validate the resulting location header |
-| `verifyPrivacySettingsLink()` | *Coming Soon* - Will validate navigating to Privacy Settings via hamburger menu |
-
----
-
-## 🚀 How to Run Tests
-
-1. Clone this repo  
-2. Open in Eclipse (or your preferred IDE)  
-3. Ensure Maven is installed  
-4. Run tests via:
-```bash
-mvn clean test
-Or right-click any test class in Eclipse and choose Run As → TestNG Test
-
 🔮 Future Improvements
 Add testng.xml to support suite configuration
 
@@ -78,19 +59,4 @@ GitHub: @Railikebread
 
 Built for learning, portfolio growth, and to transition into a full-time Software QA or SDET role.
 
-yaml
-Copy
-Edit
-
 ---
-
-### 🛠 How to Add This in Eclipse
-
-1. Right-click your project → `New > File`
-2. Name it: `README.md`
-3. Paste the contents above
-4. Save, then:
-   ```bash
-   git add README.md
-   git commit -m "Added project README"
-   git push origin main
